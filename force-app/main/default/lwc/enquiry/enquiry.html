@@ -1,0 +1,116 @@
+<template>
+    <lightning-card title="Enquiry Form">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-combobox
+                        label="Enquiry Type"
+                        value={enquiryType}
+                        placeholder="Enquiry type..."
+                        options={enquiryTypeOptions}
+                        onchange={handleEnquiryTypeChange} required="true"></lightning-combobox>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" onchange={handleFirstName} label="First Name" required="true"></lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" onchange={handleLastName} label="Last Name" required="true"></lightning-input>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="email" onchange={handleEmail} label="Email" required="true"></lightning-input>
+                </div>
+            </div>
+    
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="tel" onchange={handlePhone} label="Phone"></lightning-input>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-combobox
+                        label="Country"
+                        value={country}
+                        placeholder="Country"
+                        options={countryOptions}
+                        onchange={handleCountryChange} required="true" ></lightning-combobox>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-combobox
+                        label="Holiday Type"
+                        value={holidayType}
+                        placeholder="Holiday Type"
+                        options={holidayTypeOptions}
+                        onchange={handleHolidayTypeChange} required="true" ></lightning-combobox>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="number" onchange={handleNumberOfAdults} label="Number of Adults" required="true"></lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="number" onchange={handleNumberOfChildren} label="Number of Children"></lightning-input>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="date" onchange={handleArrivalDate} label="Arrival date"></lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="date" onchange={handleDepatureDate} label="Depature Date"></lightning-input>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" onchange={handleComments} label="Comments"></lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-combobox
+                        label="Account"
+                        placeholder="Account"
+                        options={wiredAccounts.data}
+                        onchange={handleAccount} required="true"></lightning-combobox>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="slds-align_absolute-center">
+            <lightning-button variant="brand" label="Submit" onclick={submit} disabled={formInvalid} ></lightning-button>
+        </div> 
+    </lightning-card>
+</template>
